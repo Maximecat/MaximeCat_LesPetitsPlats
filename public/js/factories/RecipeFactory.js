@@ -8,8 +8,4 @@ export class RecipeFactory {
     createRecipeCard() {
 
     }
-
-    createTag() {
-
-    }
 }
