@@ -3,8 +3,6 @@ export class Recipe {
     name;
     servings;
     ingredients;
-    quantity;
-    unit;
     time;
     description;
     appliance;
@@ -15,8 +13,6 @@ export class Recipe {
         this.name = recipeDatas.name;
         this.servings = recipeDatas.servings;
         this.ingredients = recipeDatas.ingredients;
-        this.quantity = recipeDatas.quantity;
-        this.unit = recipeDatas.unit;
         this.time = recipeDatas.time;
         this.description = recipeDatas.description;
         this.appliance = recipeDatas.appliance;
