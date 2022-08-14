@@ -1,5 +1,251 @@
 body {
     margin: auto;
     max-width: 1440px;
+    min-width: 375px;
     border: 1px solid red;
 }
+
+/*        Logo        */
+#logo {
+    margin: auto;
+    display: flex;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/*        Searchbar        */
+#searchbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #dcdcdcb2;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 15px;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
+/*        Input Searchbar        */
+#input-searchbar {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #dcdcdc00;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+/*        Icon Searchbar        */
+.iconloupe {
+    margin-left: 15px;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+/*        Bannière des tags        */
+#pourtags {
+    display: flex;
+    width: auto;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 25px;
+    border-radius: 3px;
+}
+
+/*        Tag (test)        */
+.tag1 {
+    width: fit-content;
+    height: 30px;
+    background-color: #0077ee;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 25px;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: small;
+}
+
+/*        Tag (icon supprimer - close circle)        */
+.fa-circle-xmark {
+    color: white;
+    margin: 15px;
+    cursor: pointer;
+}
+
+/*        Les 3 boutons de recherche        */
+#all-3-button {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
+
+/*        1er bouton : ingredients        */
+.button1-ingredients {
+    color: white;
+    background-color: #0077ee;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 17px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+/*        2ème bouton : appareils        */
+.button2-appareils {
+    color: white;
+    background-color: #00e99b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 17px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+/*        3ème bouton : ustensiles        */
+.button3-ustensiles {
+    color: white;
+    background-color: #FF6347;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 17px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+/*        Icon Chevron Button        */
+.fa-chevron-down {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*        Card        */
+.recipe-card {
+    width: 425px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.recipe-card a {
+    text-decoration: none;
+    background-color: #dcdcdcb2;
+}
+
+/*        Card - image        */
+.grey-image {
+    width: 100%;
+    height: 180px;
+    background-color: #e2e2e2;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/*        Card - corps        */
+.card-body {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color: #dcdcdcb2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -1px;
+}
+
+/*        Card titre + icon clock + temps recette        */
+.card-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*        Card - titre        */
+.recipe-title {
+    color: black;
+    font-weight: lighter;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+}
+
+/*        Card - icon clock + temps recette        */
+.recipe-timing {
+    display: flex;
+    align-items: center;
+}
+
+/*        Card - icon clock        */
+.icon-clock {
+    color: black;
+    margin-top: -6px;
+}
+
+/*        Card - temps recette        */
+.recipe-time-to-prepare {
+    color: black;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 15px;
+    margin-left: 7px;
+    margin-top: 10px;
+}
+
+/*        Card part recipe        */
+.card-recipe-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+/*        Card - all recipe        */
+.all-recipe-ingredients {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0px;
+}
+
+/*        Card - ingredient (dossage)        */
+.ingredient {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+}
+
+/*        Card - ingedient bold        */
+.ingredient-bold {
+    color: black;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*        Card - description recipe        */
+.recipe-description {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 110px;
+    margin-top: 0px;
+}
+
+
+
+
