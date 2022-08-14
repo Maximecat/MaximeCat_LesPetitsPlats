@@ -1,43 +1,170 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image" href="public/assets/images/icone.svg"/>
+    <link rel="icon" type="image" href="public/assets/images/icone.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <title>Les petits plats</title>
 </head>
+
 <body>
     <header>
-        <img src="public/assets/images/logo.svg" class="logo" alt="Logo Les Petits Plats">
-        <form>
-            <input type="text">
-            <i></i>
+        <img src="public/assets/images/logo.svg" id="logo" alt="Logo Les Petits Plats">
+
+        <form id="searchbar">
+            <input type="text" id="input-searchbar" placeholder="Rechercher une recette">
+            <i class="iconloupe fa-solid fa-magnifying-glass"></i>
         </form>
-        <div id="pourtags"></div>
-        <div>
-            <button>
-                <span></span>
-                <i></i>
+
+        <div id="pourtags">
+            <span class="tag1">Coco
+                <i class="fa-regular fa-circle-xmark"></i>
+            </span>
+            <span class="tag1">Pomme
+                <i class="fa-regular fa-circle-xmark"></i>
+            </span>
+            <span class="tag1">Tomate
+                <i class="fa-regular fa-circle-xmark"></i>
+            </span>
+        </div>
+
+        <div id="all-3-button">
+            <button class="button1-ingredients">
+                <span>Ingredients</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </button>
 
-            <button>
-                <span></span>
-                <i></i>
+            <button class="button2-appareils">
+                <span>Appareils</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </button>
 
-            <button>
-                <span></span>
-                <i></i>
+            <button class="button3-ustensiles">
+                <span>Ustensiles</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </button>
         </div>
     </header>
 
     <main>
-        <!-- <article></article> -->
+        <article class="recipe-card">
+            <a href="#">
+                <img src="public/assets/images/image-card.png" class="grey-image" alt="">
+                <div class="card-body">
+                    <div class="card-head">
+                        <h2 class="recipe-title">Test Titre</h2>
+                        <div class="recipe-timing">
+                            <i class="icon-clock fa-regular fa-clock"></i>
+                            <p class="recipe-time-to-prepare">60 min</p>
+                        </div>
+                    </div>
+                    <div class="card-recipe-part">
+                        <ul class="all-recipe-ingredients">
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                        </ul>
+                        <p class="recipe-description"> Explication de la recette, explication de la recette, explication
+                            de la recette, explication de la recette</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+
+        <article class="recipe-card">
+            <a href="#">
+                <img src="public/assets/images/image-card.png" class="grey-image" alt="">
+                <div class="card-body">
+                    <div class="card-head">
+                        <h2 class="recipe-title">Test Titre</h2>
+                        <div class="recipe-timing">
+                            <i class="icon-clock fa-regular fa-clock"></i>
+                            <p class="recipe-time-to-prepare">60 min</p>
+                        </div>
+                    </div>
+                    <div class="card-recipe-part">
+                        <ul class="all-recipe-ingredients">
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                        </ul>
+                        <p class="recipe-description"> Explication de la recette, explication de la recette, explication
+                            de la recette, explication de la recette</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+
+        <article class="recipe-card">
+            <a href="#">
+                <img src="public/assets/images/image-card.png" class="grey-image" alt="">
+                <div class="card-body">
+                    <div class="card-head">
+                        <h2 class="recipe-title">Test Titre</h2>
+                        <div class="recipe-timing">
+                            <i class="icon-clock fa-regular fa-clock"></i>
+                            <p class="recipe-time-to-prepare">60 min</p>
+                        </div>
+                    </div>
+                    <div class="card-recipe-part">
+                        <ul class="all-recipe-ingredients">
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                            <li class="ingredient">
+                                <span class="ingredient-bold">Ingredient:</span>
+                                dossage
+                            </li>
+                        </ul>
+                        <p class="recipe-description"> Explication de la recette, explication de la recette, explication
+                            de la recette, explication de la recette</p>
+                    </div>
+                </div>
+            </a>
+        </article>
     </main>
 </body>
 
-<script src="https://kit.fontawesome.com/b62bead743.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/b62bead743.js" crossorigin="anonymous" type="module"></script>
+
 </html>
