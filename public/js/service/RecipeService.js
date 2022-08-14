@@ -9,9 +9,4 @@ export class RecipeService {
             .then(datas => datas.recipes.map(recipe => new Recipe(recipe)))
             .catch(err => console.error(err))
     }
-
-    getRecipe(recipeId) {
-        return this.getRecipes()
-        .then(recipes => recipes.find(recipe => recipe.id == recipeId))
-    }
 }
