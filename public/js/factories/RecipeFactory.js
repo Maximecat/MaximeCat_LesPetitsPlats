@@ -6,6 +6,6 @@ export class RecipeFactory {
     }
 
     createRecipeCard() {
-
+        
     }
 }
