@@ -17,259 +17,160 @@
         <img src="public/assets/images/logo.svg" id="logo" alt="Logo Les Petits Plats">
 
         <form id="searchbar">
-            <input type="text" id="input-searchbar" placeholder="Rechercher une recette">
-            <i class="iconloupe fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchbar-input" placeholder="Rechercher une recette">
+            <i class="searchbar-loupe-icon fa-solid fa-magnifying-glass"></i>
         </form>
 
-        <div id="pourtags">
-            <span class="tag1">Coco
+        <div id="tags-banner">
+            <span class="tag bg-ingredient">Coco
                 <i class="fa-regular fa-circle-xmark"></i>
             </span>
-            <span class="tag1">Pomme
+            <span class="tag bg-ustensile">Fourchette
                 <i class="fa-regular fa-circle-xmark"></i>
             </span>
-            <span class="tag1">Tomate
-                <i class="fa-regular fa-circle-xmark"></i>
-            </span>
-            <span class="tag1">Coco
-                <i class="fa-regular fa-circle-xmark"></i>
-            </span>
-            <span class="tag1">Pomme
-                <i class="fa-regular fa-circle-xmark"></i>
-            </span>
-            <span class="tag1">Tomate
+            <span class="tag bg-appareil">Blender
                 <i class="fa-regular fa-circle-xmark"></i>
             </span>
         </div>
 
-        <div id="all-3-button">
-            <button id="btn-ingredients" class="button1-ingredients">
-                <span id="name-section">Ingredients</span>
-                <input id="input-section-ingredients" type="text" placeholder="Rechercher un ingrédient">
+        <div id="btn-container">
+            <button id="btn-ingredients" class="buttons bg-ingredient">
+                <span id="btn-title">Ingredients</span>
+                <input id="btn-input" type="text" class="bg-ingredient" placeholder="Rechercher un ingrédient">
                 <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
-                <div class="second-part-menu">
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                </div>
-            </button>
-        
-
-            <button id="btn-appareils" class="button2-appareils">
-                <span id="name-section">Appareils</span>
-                <input id="input-section-appareils" type="text" placeholder="Rechercher un appareil">
-                <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
-                <div class="second-part-menu2">
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                </div>
             </button>
 
-            <button id="btn-ustensiles" class="button3-ustensiles">
-                <span id="name-section">Ustensiles</span>
-                <input id="input-section-ustensiles" type="text" placeholder="Rechercher un ustensile">
+
+            <button id="btn-appareils" class="buttons bg-appareil">
+                <span id="btn-title">Appareils</span>
+                <input id="btn-input" type="text" class="bg-appareil" placeholder="Rechercher un appareil">
                 <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
-                <div class="second-part-menu3">
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                    <span class="ingredient-choice">Fourchette</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Couteau</span>
-                    <span class="ingredient-choice">Cuiliére a café</span>
-                    <span class="ingredient-choice">Mixeur</span>
-                    <span class="ingredient-choice">Saladier</span>
-                    <span class="ingredient-choice">Fouet</span>
-                    <span class="ingredient-choice">Cuilère</span>
-                </div>
+            </button>
+
+            <button id="btn-ustensiles" class="buttons bg-ustensile">
+                <span id="btn-title">Ustensiles</span>
+                <input id="btn-input" type="text" class="bg-ustensile" placeholder="Rechercher un ustensile">
+                <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
             </button>
         </div>
     </header>
 
-    <main id="recipes-container">
+    <main>
         <article class="recipe-card">
-            <a href="#">
-                <img src="public/assets/images/image-card.png" class="grey-image" alt="">
-                <div class="card-body">
-                    <div class="card-head">
-                        <h2 class="recipe-title">Test Titre</h2>
-                        <div class="recipe-timing">
-                            <i class="icon-clock fa-regular fa-clock"></i>
-                            <p class="recipe-time-to-prepare">60 min</p>
-                        </div>
-                    </div>
-                    <div class="card-recipe-part">
-                        <ul class="all-recipe-ingredients">
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                        </ul>
-                        <p class="recipe-description"> Explication de la recette, explication de la recette, explication
-                            de la recette, explication de la recette</p>
+            <div class="recipe-card-image"></div>
+            <div class="card-infos">
+                <div class="card-header">
+                    <h2 class="recipe-title">Test Titre</h2>
+                    <div class="recipe-time-box">
+                        <i class="recipe-clock-icon fa-regular fa-clock"></i>
+                        <p class="recipe-time">60 min</p>
                     </div>
                 </div>
-            </a>
+                <div class="recipe-part">
+                    <ul class="ingredients">
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                    </ul>
+                    <p class="recipe-description"> Explication de la recette, explication de la recette, explication
+                        de la recette,explication de la recetteExplication de la recette, explication de la recette,
+                        explication
+                        de la recettedeexplication de la recetteExplication de la recette, explication de la recette,
+                        explication
+                        de la recettede</p>
+                </div>
+            </div>
         </article>
 
         <article class="recipe-card">
-            <a href="#">
-                <img src="public/assets/images/image-card.png" class="grey-image" alt="">
-                <div class="card-body">
-                    <div class="card-head">
-                        <h2 class="recipe-title">Test Titre</h2>
-                        <div class="recipe-timing">
-                            <i class="icon-clock fa-regular fa-clock"></i>
-                            <p class="recipe-time-to-prepare">60 min</p>
-                        </div>
-                    </div>
-                    <div class="card-recipe-part">
-                        <ul class="all-recipe-ingredients">
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                        </ul>
-                        <p class="recipe-description"> Explication de la recette, explication de la recette, explication
-                            de la recette, explication de la recette</p>
+            <div class="recipe-card-image"></div>
+            <div class="card-infos">
+                <div class="card-header">
+                    <h2 class="recipe-title">Test Titre</h2>
+                    <div class="recipe-time-box">
+                        <i class="recipe-clock-icon fa-regular fa-clock"></i>
+                        <p class="recipe-time">60 min</p>
                     </div>
                 </div>
-            </a>
+                <div class="recipe-part">
+                    <ul class="ingredients">
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                    </ul>
+                    <p class="recipe-description"> Explication de la recette, explication de la recette, explication
+                        de la recette,explication de la recetteExplication de la recette, explication de la recette,
+                        explication
+                        de la recettedeexplication de la recetteExplication de la recette, explication de la recette,
+                        explication
+                        de la recettede</p>
+                </div>
+            </div>
         </article>
 
         <article class="recipe-card">
-            <a href="#">
-                <img src="public/assets/images/image-card.png" class="grey-image" alt="">
-                <div class="card-body">
-                    <div class="card-head">
-                        <h2 class="recipe-title">Test Titre</h2>
-                        <div class="recipe-timing">
-                            <i class="icon-clock fa-regular fa-clock"></i>
-                            <p class="recipe-time-to-prepare">60 min</p>
-                        </div>
-                    </div>
-                    <div class="card-recipe-part">
-                        <ul class="all-recipe-ingredients">
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                            <li class="ingredient">
-                                <span class="ingredient-bold">Ingredient:</span>
-                                dossage
-                            </li>
-                        </ul>
-                        <p class="recipe-description"> Explication de la recette, explication de la recette, explication
-                            de la recette, explication de la recette</p>
+            <div class="recipe-card-image"></div>
+            <div class="card-infos">
+                <div class="card-header">
+                    <h2 class="recipe-title">Test Titre</h2>
+                    <div class="recipe-time-box">
+                        <i class="recipe-clock-icon fa-regular fa-clock"></i>
+                        <p class="recipe-time">60 min</p>
                     </div>
                 </div>
-            </a>
+                <div class="recipe-part">
+                    <ul class="ingredients">
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                        <li class="ingredient">
+                            <span class="ingredient-bold">Ingredient:</span>
+                            dossage
+                        </li>
+                    </ul>
+                    <p class="recipe-description"> Explication de la recette, explication de la recette, explication
+                        de la recette,explication de la recetteExplication de la recette, explication de la recette,
+                        explication
+                        de la recettedeexplication de la recetteExplication de la recette, explication de la recette,
+                        explication
+                        de la recettede</p>
+                </div>
+            </div>
         </article>
     </main>
 
