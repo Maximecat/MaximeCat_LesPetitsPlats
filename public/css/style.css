@@ -2,7 +2,6 @@ body {
     margin: auto;
     max-width: 1440px;
     min-width: 375px;
-    border: 1px solid red;
 }
 
 /*        Logo        */
@@ -47,10 +46,12 @@ body {
 #pourtags {
     display: flex;
     width: auto;
-    height: 30px;
+    height: auto;
     margin-top: 15px;
     margin-left: 25px;
+    margin-right: 25px;
     border-radius: 3px;
+    flex-wrap: wrap;
 }
 
 /*        Tag (test)        */
@@ -64,7 +65,8 @@ body {
     padding-left: 20px;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-right: 25px;
+    margin-right: 6px;
+    margin-bottom: 5px;
     border-radius: 3px;
     font-family: 'Open Sans', sans-serif;
     font-size: small;
@@ -79,15 +81,18 @@ body {
 
 /*        Les 3 boutons de recherche        */
 #all-3-button {
+    display: flex;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 15px;
+    margin-top: -5px;
 }
 
 /*        1er bouton : ingredients        */
 .button1-ingredients {
     color: white;
     background-color: #0077ee;
+    height: fit-content;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     padding: 17px;
@@ -96,12 +101,82 @@ body {
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+#input-section-ingredients {
+    display: none;
+    background-color: #0077ee;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    outline: none;
+}
+
+#input-section-ingredients::placeholder {
+    width: auto;
+    height: auto;
+    color: white;
+    opacity: 0.6;
+}
+
+.button1-ingredients:focus {
+    width: 517px;
+    height: auto;
+    display: flex;
+    place-content: space-between;
+}
+
+.button1-ingredients:focus #name-section {
+    display: none;
+    transition: 1.5s;
+}
+
+.button1-ingredients:focus #input-section-ingredients {
+    display: block;
+    width: 200px
+}
+
+.button1-ingredients:focus .fa-chevron-down {
+    margin-top: 2px;
+    transform: rotate(180deg);
+}
+
+.button1-ingredients:focus .second-part-menu {
+    display: grid;
+    margin-top: 30px;
+}
+
+/*        Deuxième parti du menu déroulant        */
+.second-part-menu {
+    display: none;
+    position: absolute;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    color: white;
+    background-color: #0077ee;
+    width: 489px;
+    text-align: initial;
+    margin-top: 12px;
+    margin-left: -17px;
+    padding: 10px;
+    padding-left: 18px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.ingredient-choice {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    padding-bottom: 8px;
 }
 
 /*        2ème bouton : appareils        */
 .button2-appareils {
     color: white;
     background-color: #00e99b;
+    height: fit-content;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     padding: 17px;
@@ -112,10 +187,70 @@ body {
     cursor: pointer;
 }
 
+#input-section-appareils {
+    display: none;
+    background-color: #00e99b;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    outline: none;
+}
+
+#input-section-appareils::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+.button2-appareils:focus {
+    width: 517px;
+    height: auto;
+    display: flex;
+    place-content: space-between;
+}
+
+.button2-appareils:focus #name-section {
+    display: none;
+    transition: 1.5s;
+}
+
+.button2-appareils:focus #input-section-appareils {
+    display: block;
+    width: 200px
+}
+
+.button2-appareils:focus .fa-chevron-down {
+    margin-top: 2px;
+    transform: rotate(180deg);
+}
+
+.second-part-menu2 {
+    display: none;
+    position: absolute;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    color: white;
+    background-color: #00e99b;
+    width: 489px;
+    text-align: initial;
+    margin-top: 12px;
+    margin-left: -17px;
+    padding: 10px;
+    padding-left: 18px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.button2-appareils:focus .second-part-menu2 {
+    display: grid;
+    margin-top: 30px;
+}
+
 /*        3ème bouton : ustensiles        */
 .button3-ustensiles {
     color: white;
     background-color: #FF6347;
+    height: fit-content;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     padding: 17px;
@@ -124,6 +259,65 @@ body {
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+#input-section-ustensiles {
+    display: none;
+    background-color: #FF6347;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    outline: none;
+}
+
+#input-section-ustensiles::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+.button3-ustensiles:focus {
+    width: 517px;
+    height: auto;
+    display: flex;
+    place-content: space-between;
+}
+
+.button3-ustensiles:focus #name-section {
+    display: none;
+    transition: 1.5s;
+}
+
+.button3-ustensiles:focus #input-section-ustensiles {
+    display: block;
+    width: 200px
+}
+
+.button3-ustensiles:focus .fa-chevron-down {
+    margin-top: 2px;
+    transform: rotate(180deg);
+}
+
+.second-part-menu3 {
+    display: none;
+    position: absolute;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    color: white;
+    background-color: #FF6347;
+    width: 489px;
+    text-align: initial;
+    margin-top: 12px;
+    margin-left: -17px;
+    padding: 10px;
+    padding-left: 18px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.button3-ustensiles:focus .second-part-menu3 {
+    display: grid;
+    margin-top: 30px;
 }
 
 /*        Icon Chevron Button        */
@@ -135,13 +329,15 @@ body {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 /*        Card        */
 .recipe-card {
-    width: 425px;
-    margin-left: 25px;
-    margin-right: 25px;
+    min-width: 350px;
     margin-top: 10px;
     margin-bottom: 25px;
 }
@@ -222,6 +418,7 @@ main {
     list-style: none;
     padding-left: 0;
     margin-top: 0px;
+    margin-right: 25px;
 }
 
 /*        Card - ingredient (dossage)        */
@@ -242,10 +439,83 @@ main {
 .recipe-description {
     color: black;
     font-family: 'Open Sans', sans-serif;
-    margin-left: 110px;
+    text-align: center;
     margin-top: 0px;
+    margin-left: 25px;
 }
 
+@media screen and (max-device-width: 1149px) {
 
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
+@media screen and (max-device-width: 885px) {
 
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-card {
+        max-width: 490px;
+    }
+
+    #all-3-button {
+        flex-direction: column;
+        width: 55%;
+        margin-left: 22.5%;
+    }
+
+    .button1-ingredients {
+        margin-right: 0px;
+    }
+
+    .button1-ingredients:focus {
+        width: auto;
+    }
+
+    .button2-appareils {
+        margin-right: 0px;
+    }
+
+    .button2-appareils:focus {
+        width: auto;
+    }
+
+    .button3-ustensiles {
+        margin-right: 0px;
+    }
+
+    .button3-ustensiles:focus {
+        width: auto;
+    }
+
+    .second-part-menu {
+        grid-template-columns: 1fr 1fr;
+        padding: 0%;
+        padding-left: 18px;
+    }
+}
+
+@media screen and (max-device-width: 400px) {
+
+    .recipe-card {
+        min-width: 325px;
+    }
+    
+    .recipe-description {
+        color: black;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+    .second-part-menu {
+        grid-template-columns: 1fr;
+        padding: 0%;
+        padding-left: 18px;
+    }
+}
