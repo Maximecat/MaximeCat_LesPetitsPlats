@@ -74,4 +74,5 @@ class HomePageController {
     }
 }
 
+
 new HomePageController();
