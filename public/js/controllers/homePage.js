@@ -21,13 +21,13 @@ class HomePageController {
 
     constructor() {
         this.recipeService = new RecipeService();
-        this.searchInput = document.getElementById('input-searchbar');
+        this.searchInput = document.getElementById('searchbar-input');
         this.btnIngredients = document.getElementById('btn-ingredients');
         this.btnAppareils = document.getElementById('btn-appareils');
         this.btnUstensiles = document.getElementById('btn-ustensiles');
         this.selectedTags = [];
-        this.tagsContainer = document.getElementById('pourtags');
-        this.recipesContainer = document.getElementById('recipes-container');
+        this.tagsContainer = document.getElementById('tags-banner');
+        this.recipesContainer = document.getElementById('card-container');
         this.recipes = [];
 
         this.getRecipesDatas();
