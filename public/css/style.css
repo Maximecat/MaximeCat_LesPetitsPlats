@@ -183,10 +183,11 @@ body {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 40px 20px;
     margin-right: 25px;
     margin-left: 25px;
     margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 /**************************        Card        **************************/
@@ -206,7 +207,7 @@ main {
 .card-infos {
     height: 170px;
     padding-left: 20px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
     background-color: #dcdcdcb2;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -222,9 +223,10 @@ main {
 /*        Card - Title        */
 .recipe-title {
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: lighter;
     margin-top: 10px;
+    margin-right: 10px;
 }
 
 /*        Card - Icon clock + time       */
@@ -240,6 +242,7 @@ main {
 
 /*        Card - time (temps recette)        */
 .recipe-time {
+    width: max-content;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     margin-right: 15px;
@@ -259,6 +262,7 @@ main {
     padding-left: 0;
     margin-top: 0px;
     margin-right: 25px;
+    width: 100%;
 }
 
 /*        Card - ingredient (dossage)  "LI"      */
@@ -272,6 +276,8 @@ main {
 .ingredient-bold {
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    margin-right: 5px;
 }
 
 /*        Card - description recipe        */
@@ -280,10 +286,9 @@ main {
     font-family: 'Open Sans', sans-serif;
     font-size: 11px;
     height: 105px;
-    width: auto;
+    width: 90%;
     margin-top: 0px;
-    margin-left: 25px;
-    margin-right: 10px;
+    margin-right: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -300,13 +305,13 @@ main {
         flex-direction: column;
         position: initial;
     }
-    
+
     .buttons {
         display: flex;
         margin-right: 0px;
         justify-content: center;
     }
-    
+
     .buttons:focus {
         justify-content: space-between;
         flex-direction: column;
@@ -337,10 +342,14 @@ main {
     #btn-liste {
         grid-template-columns: 1fr 1fr;
     }
+
+    .recipe-title {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-device-width: 375px) {
-    
+
     #btn-liste {
         grid-template-columns: 1fr;
     }
