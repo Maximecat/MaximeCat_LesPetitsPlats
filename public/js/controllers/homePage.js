@@ -5,6 +5,7 @@ class HomePageController {
     recipeService;
 
     searchInput;
+
     btnIngredients;
     inputIngredients;
     btnAppareils;
@@ -12,21 +13,23 @@ class HomePageController {
     btnUstensiles;
     inputUstensiles;
 
+    tagsContainer;
     selectedTags;
 
-    tagsContainer;
     recipesContainer;
-
     recipes;
 
     constructor() {
         this.recipeService = new RecipeService();
         this.searchInput = document.getElementById('searchbar-input');
+
         this.btnIngredients = document.getElementById('btn-ingredients');
         this.btnAppareils = document.getElementById('btn-appareils');
         this.btnUstensiles = document.getElementById('btn-ustensiles');
-        this.selectedTags = [];
+
         this.tagsContainer = document.getElementById('tags-banner');
+        this.selectedTags = [];
+
         this.recipesContainer = document.getElementById('card-container');
         this.recipes = [];
 
@@ -37,7 +40,7 @@ class HomePageController {
         this.recipes = await this.recipeService.getRecipes();
         this.displayRecipes();
 
-        console.log(recipes);
+        console.log(this.recipes);
     }
 
     displayRecipes() {
@@ -54,11 +57,11 @@ class HomePageController {
     }
 
     getAppareils() {
-        
+
     }
 
     getUstensiles() {
-        
+
     }
 
     displayIngredients() {
@@ -66,11 +69,11 @@ class HomePageController {
     }
 
     displayAppareils() {
-        
+
     }
 
     displayUstensiles() {
-        
+
     }
 }
 
