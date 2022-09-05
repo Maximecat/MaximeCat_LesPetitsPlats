@@ -8,7 +8,7 @@ export class Recipe {
     appliance;
     ustensils;
 
-    constructor(recipeDatas){
+    constructor(recipeDatas) {
         this.id = recipeDatas.id;
         this.name = recipeDatas.name;
         this.servings = recipeDatas.servings;
