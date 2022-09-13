@@ -40,7 +40,8 @@ class HomePageController {
         this.recipes = await this.recipeService.getRecipes();
         this.displayRecipes();
         this.displayIngredients();
-        // this.displayAppareils();
+        this.displayAppareils();
+        this.displayUstensiles();
 
         console.log(this.recipes);
         console.log(this.recipeService.getIngredients(this.recipes));
@@ -60,8 +61,10 @@ class HomePageController {
     displayIngredients() {
         const ingredientArray = this.recipeService.getIngredients(this.recipes);
         const btnIngredient = this.btnIngredients;
-        const btnSecondPart = document.getElementById('btn-second-part');
-        const listeDisplayZone = document.getElementById('btn-liste');
+        const btnSecondPart = document.createElement('div');
+        btnSecondPart.className = "btn-second-part";
+        const listeDisplayZone = document.createElement('ul');
+        listeDisplayZone.className = "btn-liste";
 
 
         for (let i = 0; i < ingredientArray.length; i++) {
@@ -76,25 +79,43 @@ class HomePageController {
     }
 
     displayAppareils() {
-        // const appareilArray = this.recipeService.getAppareils(this.recipes);
-        // const btnAppareil = this.btnAppareils;
-        // const btnSecondPart = document.getElementById('btn-second-part');
-        // const listeDisplayZone = document.getElementById('btn-liste');
+        const appareilArray = this.recipeService.getAppareils(this.recipes);
+        const btnAppareil = this.btnAppareils;
+        const btnSecondPart = document.createElement('div');
+        btnSecondPart.className = "btn-second-part";
+        const listeDisplayZone = document.createElement('ul');
+        listeDisplayZone.className = "btn-liste";
 
 
-        // for (let i = 0; i < appareilArray.length; i++) {
-        //     const listeElements = document.createElement('li');
-        //     listeElements.className = "btn-liste-element";
-        //     listeElements.innerText = appareilArray[i];
+        for (let i = 0; i < appareilArray.length; i++) {
+            const listeElements = document.createElement('li');
+            listeElements.className = "btn-liste-element";
+            listeElements.innerText = appareilArray[i];
 
-        //     btnAppareil.appendChild(btnSecondPart);
-        //     btnSecondPart.appendChild(listeDisplayZone)
-        //     listeDisplayZone.appendChild(listeElements);
-        // }
+            btnAppareil.appendChild(btnSecondPart);
+            btnSecondPart.appendChild(listeDisplayZone)
+            listeDisplayZone.appendChild(listeElements);
+        }
     }
 
     displayUstensiles() {
+        const ustensileArray = this.recipeService.getUstensiles(this.recipes);
+        const btnUstensile = this.btnUstensiles;
+        const btnSecondPart = document.createElement('div');
+        btnSecondPart.className = "btn-second-part";
+        const listeDisplayZone = document.createElement('ul');
+        listeDisplayZone.className = "btn-liste";
 
+
+        for (let i = 0; i < ustensileArray.length; i++) {
+            const listeElements = document.createElement('li');
+            listeElements.className = "btn-liste-element";
+            listeElements.innerText = ustensileArray[i];
+
+            btnUstensile.appendChild(btnSecondPart);
+            btnSecondPart.appendChild(listeDisplayZone)
+            listeDisplayZone.appendChild(listeElements);
+        }
     }
 }
 
