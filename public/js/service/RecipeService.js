@@ -10,9 +10,9 @@ export class RecipeService {
             .catch(err => console.error(err))
     }
 
-    getIngredients(recipes) {
+    getIngredients(recipes, filterText) {
 
-        return new Array(
+        let ingredients = new Array(
             ...new Set(
                 recipes.map(recipe => {
                     return recipe.ingredients.map(ingredient => {
@@ -21,29 +21,57 @@ export class RecipeService {
                 }).flat()
             )
         )
+
+        console.log(filterText);
+
+        if (filterText) {
+            ingredients = ingredients.filter(ingredient => {
+                return ingredient.includes(filterText);
+            })
+        }
+
+        return ingredients;
     }
 
-    getAppareils(recipes) {
+    getAppareils(recipes, filterText) {
 
-        return new Array(
+        let appareils = new Array(
             ...new Set(
                 recipes.map(recipe => {
                     return recipe.appliance;
                 })
             )
         )
+
+        console.log(filterText);
+
+        if (filterText) {
+            appareils = appareils.filter(appareil => {
+                return appareil.includes(filterText);
+            })
+        }
+
+        return appareils;
     }
 
-    getUstensiles(recipes) {
+    getUstensiles(recipes, filterText) {
 
-        return new Array(
+        let ustensiles = new Array(
             ...new Set(
                 recipes.map(recipe => {
-                    return recipe.ustensils.map(ustensils => {
-                        return ustensils;
-                    });
+                    return recipe.ustensils;
                 }).flat()
             )
         )
+
+        console.log(filterText);
+
+        if (filterText) {
+            ustensiles = ustensiles.filter(ustensile => {
+                return ustensile.includes(filterText);
+            })
+        }
+
+        return ustensiles;
     }
 }
