@@ -39,8 +39,13 @@ class HomePageController {
     async getRecipesDatas() {
         this.recipes = await this.recipeService.getRecipes();
         this.displayRecipes();
+        this.displayIngredients();
+        // this.displayAppareils();
 
         console.log(this.recipes);
+        console.log(this.recipeService.getIngredients(this.recipes));
+        console.log(this.recipeService.getAppareils(this.recipes));
+        console.log(this.recipeService.getUstensiles(this.recipes));
     }
 
     displayRecipes() {
@@ -52,24 +57,40 @@ class HomePageController {
         }
     }
 
-    getIngredients() {
-
-    }
-
-    getAppareils() {
-
-    }
-
-    getUstensiles() {
-
-    }
-
     displayIngredients() {
+        const ingredientArray = this.recipeService.getIngredients(this.recipes);
+        const btnIngredient = this.btnIngredients;
+        const btnSecondPart = document.getElementById('btn-second-part');
+        const listeDisplayZone = document.getElementById('btn-liste');
 
+
+        for (let i = 0; i < ingredientArray.length; i++) {
+            const listeElements = document.createElement('li');
+            listeElements.className = "btn-liste-element";
+            listeElements.innerText = ingredientArray[i];
+
+            btnIngredient.appendChild(btnSecondPart);
+            btnSecondPart.appendChild(listeDisplayZone)
+            listeDisplayZone.appendChild(listeElements);
+        }
     }
 
     displayAppareils() {
+        // const appareilArray = this.recipeService.getAppareils(this.recipes);
+        // const btnAppareil = this.btnAppareils;
+        // const btnSecondPart = document.getElementById('btn-second-part');
+        // const listeDisplayZone = document.getElementById('btn-liste');
 
+
+        // for (let i = 0; i < appareilArray.length; i++) {
+        //     const listeElements = document.createElement('li');
+        //     listeElements.className = "btn-liste-element";
+        //     listeElements.innerText = appareilArray[i];
+
+        //     btnAppareil.appendChild(btnSecondPart);
+        //     btnSecondPart.appendChild(listeDisplayZone)
+        //     listeDisplayZone.appendChild(listeElements);
+        // }
     }
 
     displayUstensiles() {
