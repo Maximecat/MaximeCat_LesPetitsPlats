@@ -47,23 +47,16 @@ export class RecipeFactory {
 
             const ingredientBold = document.createElement('span');
             ingredientBold.className = "ingredient-bold";
-            ingredientBold.innerText = tabIngredient[i].ingredient + " :";
+            ingredientBold.innerText = tabIngredient[i].ingredient;
 
             const ingredientDosing = document.createElement('span');
             ingredientDosing.className = "ingredient-dosing";
-            ingredientDosing.textContent = tabIngredient[i].quantity;
-
-            // ingredientDosing.innerText = tabIngredient[i].quantity;
+            ingredientDosing.textContent = tabIngredient[i].quantity ? ": " + tabIngredient[i].quantity + " " + (tabIngredient[i].unit || "") : "";
 
             ingredients.appendChild(ingredientBox);
             ingredientBox.appendChild(ingredientBold);
             ingredientBox.appendChild(ingredientDosing);
-
-            console.log(tabIngredient[i]);
-            // console.log(tabIngredient[i].ingredient);
         }
-
-
 
         const recipeInstruction = document.createElement('p');
         recipeInstruction.className = "recipe-description";
