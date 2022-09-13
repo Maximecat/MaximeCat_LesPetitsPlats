@@ -22,7 +22,7 @@
         </form>
 
         <div id="tags-banner">
-            <span class="tag bg-ingredient">Coco
+            <!-- <span class="tag bg-ingredient">Coco
                 <i class="fa-regular fa-circle-xmark"></i>
             </span>
             <span class="tag bg-ustensile">Fourchette
@@ -30,32 +30,41 @@
             </span>
             <span class="tag bg-appareil">Blender
                 <i class="fa-regular fa-circle-xmark"></i>
-            </span>
+            </span> -->
         </div>
 
         <div id="btn-container">
             <button id="btn-ingredients" class="buttons bg-ingredient">
                 <div class="btn-front">
-                    <span id="btn-title">Ingredients</span>
-                    <input id="btn-input" type="text" class="bg-ingredient" placeholder="Rechercher un ingrédient">
-                    <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
+                    <span class="btn-title">Ingredients</span>
+                    <input id="btn-input-ingredient" type="text" class="bg-ingredient btn-input"
+                        placeholder="Rechercher un ingrédient">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="btn-second-part" id="liste-ingredient-part">
                 </div>
             </button>
 
 
             <button id="btn-appareils" class="buttons bg-appareil">
                 <div class="btn-front">
-                    <span id="btn-title">Appareils</span>
-                    <input id="btn-input" type="text" class="bg-appareil" placeholder="Rechercher un appareil">
-                    <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
+                    <span class="btn-title">Appareils</span>
+                    <input id="btn-input-appareil" type="text" class="bg-appareil btn-input"
+                        placeholder="Rechercher un appareil">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="btn-second-part" id="liste-appareil-part">
                 </div>
             </button>
 
             <button id="btn-ustensiles" class="buttons bg-ustensile">
                 <div class="btn-front">
-                    <span id="btn-title">Ustensiles</span>
-                    <input id="btn-input" type="text" class="bg-ustensile" placeholder="Rechercher un ustensile">
-                    <i id="icon-menu" class="fa-solid fa-chevron-down"></i>
+                    <span class="btn-title">Ustensiles</span>
+                    <input id="btn-input-ustensile" type="text" class="bg-ustensile btn-input"
+                        placeholder="Rechercher un ustensile">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="btn-second-part" id="liste-ustensile-part">
                 </div>
             </button>
         </div>
