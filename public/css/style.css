@@ -153,17 +153,17 @@ body {
 }
 
 /*       Boutons 2éme parti        */
-#btn-second-part {
+.btn-second-part {
     display: none;
     width: 489px;
     margin-top: 20px;
 }
 
-.buttons:focus #btn-second-part {
+.buttons:focus .btn-second-part {
     display: block;
 }
 
-#btn-liste {
+.btn-liste {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 12px;
@@ -321,7 +321,7 @@ main {
         width: 100%;
     }
 
-    #btn-second-part {
+    .btn-second-part {
         margin-top: 5px;
         width: 100%;
     }
@@ -339,7 +339,7 @@ main {
 
 @media screen and (max-device-width: 545px) {
 
-    #btn-liste {
+    .btn-liste {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -350,7 +350,7 @@ main {
 
 @media screen and (max-device-width: 375px) {
 
-    #btn-liste {
+    .btn-liste {
         grid-template-columns: 1fr;
     }
 
