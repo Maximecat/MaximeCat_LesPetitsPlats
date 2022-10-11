@@ -5,6 +5,7 @@ export class RecipeFactory {
         this.recipe = recipe;
     }
 
+    // Création d'un model de Recipe Card
     createRecipeCard() {
         const article = document.createElement('article');
         article.className = "recipe-card";
