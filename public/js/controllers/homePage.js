@@ -40,35 +40,39 @@ class HomePageController {
         this.initEvents();
     }
 
+    // Ecoute sur les champs de texte des boutons (tri les éléments dans la liste suivant la saisie)
     initEvents() {
         this.inputIngredients.addEventListener('keyup', (e) => {
-            const ingredients = this.recipeService.getIngredients(this.recipes, e.target.value);
-            this.displayIngredients(ingredients);
+            const ingredients = this.recipeService.getIngredients(this.recipes, e.target.value, this.selectedTags);
+            this.displayListTag('ingredient', ingredients);
         });
 
         this.inputAppareils.addEventListener('keyup', (e) => {
-            const appareils = this.recipeService.getAppareils(this.recipes, e.target.value);
-            this.displayAppareils(appareils);
+            const appareils = this.recipeService.getAppareils(this.recipes, e.target.value, this.selectedTags);
+            this.displayListTag('appareil', appareils);
         });
 
         this.inputUstensiles.addEventListener('keyup', (e) => {
-            const ustensiles = this.recipeService.getUstensiles(this.recipes, e.target.value);
-            this.displayUstensiles(ustensiles);
+            const ustensiles = this.recipeService.getUstensiles(this.recipes, e.target.value, this.selectedTags);
+            this.displayListTag('ustensile', ustensiles);
         });
     }
 
     async getRecipesDatas() {
         this.recipes = await this.recipeService.getRecipes();
-
         this.displayRecipes();
-        const ingredients = this.recipeService.getIngredients(this.recipes);
-        this.displayIngredients(ingredients);
-        const appareils = this.recipeService.getAppareils(this.recipes);
-        this.displayAppareils(appareils);
-        const ustensiles = this.recipeService.getUstensiles(this.recipes);
-        this.displayUstensiles(ustensiles);
+
+        const ingredients = this.recipeService.getIngredients(this.recipes, null, this.selectedTags);
+        this.displayListTag('ingredient', ingredients);
+
+        const appareils = this.recipeService.getAppareils(this.recipes, null, this.selectedTags);
+        this.displayListTag('appareil', appareils);
+
+        const ustensiles = this.recipeService.getUstensiles(this.recipes, null, this.selectedTags);
+        this.displayListTag('ustensile', ustensiles);
     }
 
+    // Affichage des Recipe Cards dans le main
     displayRecipes() {
         for (const recipe of this.recipes) {
             const recipeFactory = new RecipeFactory(recipe);
@@ -78,57 +82,53 @@ class HomePageController {
         }
     }
 
-    displayIngredients(ingredientArray) {
-        const ingredientPart = document.getElementById('liste-ingredient-part');
-        ingredientPart.innerHTML = "";
+    // Affichage des tags dans le menu déroulant des boutons assosié
+    displayListTag(typeTag, arrayTag) {
+        const tagPart = document.getElementById(`liste-${typeTag}-part`);
+        tagPart.innerHTML = "";
 
-        const ingredientList = document.createElement('ul');
-        ingredientList.className = "btn-liste";
+        const tagList = document.createElement('ul');
+        tagList.className = "btn-liste";
 
-        ingredientPart.appendChild(ingredientList);
+        tagPart.appendChild(tagList);
 
-        for (let i = 0; i < ingredientArray.length; i++) {
-            const listeElements = document.createElement('li');
-            listeElements.className = "btn-liste-element";
-            listeElements.innerText = ingredientArray[i];
+        for (let i = 0; i < arrayTag.length; i++) {
+            const listeElement = document.createElement('li');
+            listeElement.className = "btn-liste-element";
+            listeElement.innerText = arrayTag[i];
 
-            ingredientList.appendChild(listeElements);
+            listeElement.addEventListener('click', (e) => {
+                this.selectedTags.push({
+                    type: typeTag,
+                    value: e.target.innerText
+                });
+                this.displayTags();
+                this.getRecipesDatas();
+            })
+
+            tagList.appendChild(listeElement);
         }
     }
 
-    displayAppareils(appareilArray) {
-        const appareilPart = document.getElementById('liste-appareil-part');
-        appareilPart.innerHTML = "";
+    // Affichage des tags sélectionnés avec la couleur propre à sa catégorie, du menu déroulant à la bannière des tags
+    displayTags() {
 
-        const appareilList = document.createElement('ul');
-        appareilList.className = "btn-liste";
+        this.tagsContainer.innerHTML = "";
 
-        appareilPart.appendChild(appareilList);
+        for (let i = 0, len = this.selectedTags.length; i < len; i++) {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = `tag bg-${this.selectedTags[i].type}`;
+            tagSpan.innerText = this.selectedTags[i].value;
 
-        for (let i = 0; i < appareilArray.length; i++) {
-            const listeElements = document.createElement('li');
-            listeElements.className = "btn-liste-element";
-            listeElements.innerText = appareilArray[i];
+            const icon = document.createElement('i');
+            icon.className = "fa-regular fa-circle-xmark";
+            icon.addEventListener('click', () => {
+                this.selectedTags.splice(i, 1);
+                this.displayTags();
+            });
 
-            appareilList.appendChild(listeElements);
-        }
-    }
-
-    displayUstensiles(ustensileArray) {
-        const ustensilePart = document.getElementById('liste-ustensile-part');
-        ustensilePart.innerHTML = "";
-
-        const ustensileList = document.createElement('ul');
-        ustensileList.className = "btn-liste";
-
-        ustensilePart.appendChild(ustensileList);
-
-        for (let i = 0; i < ustensileArray.length; i++) {
-            const listeElements = document.createElement('li');
-            listeElements.className = "btn-liste-element";
-            listeElements.innerText = ustensileArray[i];
-
-            ustensileList.appendChild(listeElements);
+            tagSpan.appendChild(icon);
+            this.tagsContainer.appendChild(tagSpan);
         }
     }
 }
