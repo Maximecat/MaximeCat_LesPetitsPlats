@@ -56,10 +56,15 @@ class HomePageController {
             const ustensiles = this.recipeService.getUstensiles(this.recipes, e.target.value, this.selectedTags);
             this.displayListTag('ustensile', ustensiles);
         });
+
+        // ajouter l'event sur l'input de la searchbar, 
+        // si la valeur de mon evenement est supérieur 
+        // ou egal à 3 alors je doit aller chercher les recette 
+        // dans recipeService en lui placant en parametre la valeur
     }
 
     async getRecipesDatas() {
-        this.recipes = await this.recipeService.getRecipes();
+        this.recipes = await this.recipeService.getRecipes(this.selectedTags);
         this.displayRecipes();
 
         const ingredients = this.recipeService.getIngredients(this.recipes, null, this.selectedTags);
@@ -74,6 +79,8 @@ class HomePageController {
 
     // Affichage des Recipe Cards dans le main
     displayRecipes() {
+        this.recipesContainer.innerHTML = "";
+
         for (const recipe of this.recipes) {
             const recipeFactory = new RecipeFactory(recipe);
             const recipeCard = recipeFactory.createRecipeCard();
@@ -125,6 +132,7 @@ class HomePageController {
             icon.addEventListener('click', () => {
                 this.selectedTags.splice(i, 1);
                 this.displayTags();
+                this.getRecipesDatas();
             });
 
             tagSpan.appendChild(icon);
