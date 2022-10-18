@@ -4,10 +4,33 @@ export class RecipeService {
     constructor() { }
 
     // Récupération des Recipes dans les datas
-    getRecipes() {
+    getRecipes(selectedTags) {
         return fetch('public/datas/datas.json')
             .then(res => res.json())
-            .then(datas => datas.recipes.map(recipe => new Recipe(recipe)))
+            .then(datas => {
+                if (selectedTags && selectedTags.length) {
+                    for (const tag of selectedTags) {
+                        datas.recipes = datas.recipes.filter(recipe => {
+                            switch (tag.type) {
+                                case 'ingredient':
+                                    console.log('ingredient');
+                                    return recipe.ingredients.filter(ingredient => {
+                                        return ingredient.ingredient === tag.value
+                                    }).length > 0;
+
+                                case 'appareil':
+                                    console.log('appareil');
+                                    return tag.value === recipe.appliance;
+
+                                case 'ustensile':
+                                    console.log('ustensile');
+                                    return recipe.ustensils.includes(tag.value);
+                            }
+                        })
+                    }
+                }
+                return datas.recipes.map(recipe => new Recipe(recipe))
+            })
             .catch(err => console.error(err))
     }
 
@@ -37,7 +60,7 @@ export class RecipeService {
             return !selectedTags.map(tag => tag.value).includes(ingredient);
         })
 
-        return ingredients;
+        return ingredients.sort((a, b) => a.localeCompare(b));
     }
 
     // Récupération des Appareils
@@ -64,7 +87,7 @@ export class RecipeService {
             return !selectedTags.map(tag => tag.value).includes(appareil);
         })
 
-        return appareils;
+        return appareils.sort((a, b) => a.localeCompare(b));
     }
 
     // Récupération des Ustensiles
@@ -91,6 +114,6 @@ export class RecipeService {
             return !selectedTags.map(tag => tag.value).includes(ustensile);
         })
 
-        return ustensiles;
+        return ustensiles.sort((a, b) => a.localeCompare(b));
     }
 }
