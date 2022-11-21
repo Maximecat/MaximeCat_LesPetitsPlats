@@ -4,12 +4,15 @@ export class RecipeService {
     constructor() { }
 
     // Récupération des Recipes dans les datas
-    getRecipes(selectedTags) {
+    getRecipes(selectedTags, searchInput) {
         return fetch('public/datas/datas.json')
             .then(res => res.json())
             .then(datas => {
+                // Si un tag est sélectionné (donc ajouter au tableau) et que ce tableau a une longueur
                 if (selectedTags && selectedTags.length) {
+                    // Pour chaque tag dans mon tableau
                     for (const tag of selectedTags) {
+                        // Filtre des recettes suivant 3 cas (si le tag sélectionné est : un ingredient, un appareil ou un ustensile)
                         datas.recipes = datas.recipes.filter(recipe => {
                             switch (tag.type) {
                                 case 'ingredient':
@@ -29,15 +32,35 @@ export class RecipeService {
                         })
                     }
                 }
+                // Si une valeur est inscrite dans searchInput
+                if (searchInput) {
+                    // Filtre des recettes
+                    datas.recipes = datas.recipes.filter(recipe => {
+                        const checkNameOrDesc = recipe.name.toLowerCase().includes(searchInput.toLowerCase()) || recipe.description.toLowerCase().includes(searchInput.toLowerCase());
+                        // Si la recherche est contenu dans le titre ou la description d'une recette, on l'affiche
+                        if (checkNameOrDesc) {
+                            return true;
+                        } else {
+                            const foundIngredient = recipe.ingredients.find(ing => {
+                                return ing.ingredient.toLowerCase().includes(searchInput.toLowerCase());
+                            })
+                            // Si la recherche est contenu dans la liste des ingrédients d'une recette, on l'affiche
+                            if (foundIngredient) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    })
+                }
                 return datas.recipes.map(recipe => new Recipe(recipe))
             })
             .catch(err => console.error(err))
     }
 
-    // Récupération des Ingredients
+    // Récupération des Ingredients (Tableau des recettes, input de recherche des boutons, tableau des tags sélectionnés)
     getIngredients(recipes, filterText, selectedTags) {
-
-        // Création d'un tableau
+        // Création d'un tableau d'ingredients
         let ingredients = new Array(
             ...new Set(
                 recipes.map(recipe => {
@@ -48,14 +71,14 @@ export class RecipeService {
             )
         )
 
-        // Tri du tableau suivant la saisie dans l'input
+        // Si une saisi est formuler dans l'input du bouton, filtre des ingredients dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             ingredients = ingredients.filter(ingredient => {
                 return ingredient.includes(filterText);
             })
         }
 
-        // Actualisation de la liste des ingredients dans le tableau aprés sélection d'un élément
+        // Actualisation du tableau d'ingredients en enlevant la valeur du tag sélectionné
         ingredients = ingredients.filter(ingredient => {
             return !selectedTags.map(tag => tag.value).includes(ingredient);
         })
@@ -65,8 +88,7 @@ export class RecipeService {
 
     // Récupération des Appareils
     getAppareils(recipes, filterText, selectedTags) {
-
-        // Création d'un tableau
+        // Création d'un tableau d'appareils
         let appareils = new Array(
             ...new Set(
                 recipes.map(recipe => {
@@ -75,14 +97,14 @@ export class RecipeService {
             )
         )
 
-        // Tri du tableau suivant la saisie dans l'input
+        // Si une saisi est formuler dans l'input du bouton, filtre des appareils dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             appareils = appareils.filter(appareil => {
                 return appareil.includes(filterText);
             })
         }
 
-        // Actualisation de la liste des appareils dans le tableau aprés sélection d'un élément
+        // Actualisation du tableau d'appareils en enlevant la valeur du tag sélectionné
         appareils = appareils.filter(appareil => {
             return !selectedTags.map(tag => tag.value).includes(appareil);
         })
@@ -92,8 +114,7 @@ export class RecipeService {
 
     // Récupération des Ustensiles
     getUstensiles(recipes, filterText, selectedTags) {
-
-        // Création d'un tableau
+        // Création d'un tableau d'ustensiles
         let ustensiles = new Array(
             ...new Set(
                 recipes.map(recipe => {
@@ -102,14 +123,14 @@ export class RecipeService {
             )
         )
 
-        // Tri du tableau suivant la saisie dans l'input
+        // Si une saisi est formuler dans l'input du bouton, filtre des ustensiles dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             ustensiles = ustensiles.filter(ustensile => {
                 return ustensile.includes(filterText);
             })
         }
 
-        // Actualisation de la liste des ustensiles dans le tableau aprés sélection d'un élément
+        // Actualisation du tableau d'ustensiles en enlevant la valeur du tag sélectionné
         ustensiles = ustensiles.filter(ustensile => {
             return !selectedTags.map(tag => tag.value).includes(ustensile);
         })
