@@ -5,6 +5,7 @@ class HomePageController {
     recipeService;
 
     searchInput;
+    searchValue;
 
     btnIngredients;
     inputIngredients;
@@ -22,6 +23,7 @@ class HomePageController {
     constructor() {
         this.recipeService = new RecipeService();
         this.searchInput = document.getElementById('searchbar-input');
+        this.searchValue = "";
 
         this.btnIngredients = document.getElementById('btn-ingredients');
         this.inputIngredients = document.getElementById('btn-input-ingredient');
@@ -40,7 +42,7 @@ class HomePageController {
         this.initEvents();
     }
 
-    // Ecoute sur les champs de texte des boutons (tri les éléments dans la liste suivant la saisie)
+    // Ecoute sur les inputs des boutons et de la barre de recherche
     initEvents() {
         this.inputIngredients.addEventListener('keyup', (e) => {
             const ingredients = this.recipeService.getIngredients(this.recipes, e.target.value, this.selectedTags);
@@ -57,14 +59,19 @@ class HomePageController {
             this.displayListTag('ustensile', ustensiles);
         });
 
-        // ajouter l'event sur l'input de la searchbar, 
-        // si la valeur de mon evenement est supérieur 
-        // ou egal à 3 alors je doit aller chercher les recette 
-        // dans recipeService en lui placant en parametre la valeur
+        this.searchInput.addEventListener('keyup', (e) => {
+            if (e.target.value.length >= 3) {
+                this.searchValue = e.target.value;
+            } else {
+                this.searchValue = "";
+            }
+            this.getRecipesDatas();
+        });
     }
 
+    // Fonction asynchrone affiche les "résultats" des recherche, les recettes correspondante et les tags assosié dans les listes déroulante
     async getRecipesDatas() {
-        this.recipes = await this.recipeService.getRecipes(this.selectedTags);
+        this.recipes = await this.recipeService.getRecipes(this.selectedTags, this.searchValue);
         this.displayRecipes();
 
         const ingredients = this.recipeService.getIngredients(this.recipes, null, this.selectedTags);
@@ -77,7 +84,7 @@ class HomePageController {
         this.displayListTag('ustensile', ustensiles);
     }
 
-    // Affichage des Recipe Cards dans le main
+    // Affiche les Recipe Cards dans le main
     displayRecipes() {
         this.recipesContainer.innerHTML = "";
 
@@ -89,7 +96,7 @@ class HomePageController {
         }
     }
 
-    // Affichage des tags dans le menu déroulant des boutons assosié
+    // Affiche les éléments de chaques catégories dans le menu déroulant du bouton associé + écoute sur les listes, ajout des éléments au tableau des tags sélectionnés au clique dans les listes
     displayListTag(typeTag, arrayTag) {
         const tagPart = document.getElementById(`liste-${typeTag}-part`);
         tagPart.innerHTML = "";
@@ -117,7 +124,7 @@ class HomePageController {
         }
     }
 
-    // Affichage des tags sélectionnés avec la couleur propre à sa catégorie, du menu déroulant à la bannière des tags
+    // Affichage de chaque tag contenu dans le tableau des tags sélectionnés avec la couleur propre à sa catégorie dans le tag container
     displayTags() {
 
         this.tagsContainer.innerHTML = "";
