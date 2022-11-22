@@ -35,23 +35,33 @@ export class RecipeService {
                 // Si une valeur est inscrite dans searchInput
                 if (searchInput) {
                     // Filtre des recettes
-                    datas.recipes = datas.recipes.filter(recipe => {
-                        const checkNameOrDesc = recipe.name.toLowerCase().includes(searchInput.toLowerCase()) || recipe.description.toLowerCase().includes(searchInput.toLowerCase());
-                        // Si la recherche est contenu dans le titre ou la description d'une recette, on l'affiche
-                        if (checkNameOrDesc) {
-                            return true;
+                    // datas.recipes = datas.recipes.filter(recipe => {
+                    //     const checkNameOrDesc = recipe.name.toLowerCase().includes(searchInput.toLowerCase()) || recipe.description.toLowerCase().includes(searchInput.toLowerCase());
+                    //     // Si la recherche est contenu dans le titre ou la description d'une recette, on l'affiche
+                    //     if (checkNameOrDesc) {
+                    //         return true;
+                    //     } else {
+                    //         const foundIngredient = recipe.ingredients.find(ing => {
+                    //             return ing.ingredient.toLowerCase().includes(searchInput.toLowerCase());
+                    //         })
+                    //         // Si la recherche est contenu dans la liste des ingrédients d'une recette, on l'affiche
+                    //         if (foundIngredient) {
+                    //             return true;
+                    //         } else {
+                    //             return false;
+                    //         }
+                    //     }
+                    // })
+                    const filteredRecipes = [];
+                    for (const recipe of datas.recipes) {
+                        if (recipe.name.toLowerCase().includes(searchInput.toLowerCase()) || recipe.description.toLowerCase().includes(searchInput.toLowerCase())) {
+                            filteredRecipes.push(recipe)
+                            continue;
                         } else {
-                            const foundIngredient = recipe.ingredients.find(ing => {
-                                return ing.ingredient.toLowerCase().includes(searchInput.toLowerCase());
-                            })
-                            // Si la recherche est contenu dans la liste des ingrédients d'une recette, on l'affiche
-                            if (foundIngredient) {
-                                return true;
-                            } else {
-                                return false;
-                            }
+                            // si jai pas trouver dans titre ou desc, rechercher dans la liste des ingredients pareil qu'en haut mais break ( a voir dans les ingredients )
                         }
-                    })
+                    }
+                    datas.recipes = filteredRecipes;
                 }
                 return datas.recipes.map(recipe => new Recipe(recipe))
             })
