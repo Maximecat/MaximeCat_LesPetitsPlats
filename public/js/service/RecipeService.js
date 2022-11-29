@@ -55,10 +55,15 @@ export class RecipeService {
                     const filteredRecipes = [];
                     for (const recipe of datas.recipes) {
                         if (recipe.name.toLowerCase().includes(searchInput.toLowerCase()) || recipe.description.toLowerCase().includes(searchInput.toLowerCase())) {
-                            filteredRecipes.push(recipe)
+                            filteredRecipes.push(recipe);
                             continue;
                         } else {
-                            // si jai pas trouver dans titre ou desc, rechercher dans la liste des ingredients pareil qu'en haut mais break ( a voir dans les ingredients )
+                            for (const ingredient of recipe.ingredients) {
+                                if (ingredient.ingredient.toLowerCase().includes(searchInput.toLowerCase())) {
+                                    filteredRecipes.push(recipe);
+                                    break;
+                                }
+                            }
                         }
                     }
                     datas.recipes = filteredRecipes;
