@@ -60,6 +60,7 @@ export class RecipeService {
                         } else {
                             for (const ingredient of recipe.ingredients) {
                                 if (ingredient.ingredient.toLowerCase().includes(searchInput.toLowerCase())) {
+                                    // console.log(ingredient.ingredient);
                                     filteredRecipes.push(recipe);
                                     break;
                                 }
