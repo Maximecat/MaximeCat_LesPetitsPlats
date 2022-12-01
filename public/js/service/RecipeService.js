@@ -46,7 +46,6 @@ export class RecipeService {
                             for (const ingredient of recipe.ingredients) {
                                 // Si la liste des ingredients d'une recette contient la recherche, on l'ajoute au tableau des recettes filtré qui seront afficher
                                 if (ingredient.ingredient.toLowerCase().includes(searchInput.toLowerCase())) {
-                                    // console.log(ingredient.ingredient);
                                     filteredRecipes.push(recipe);
                                     break;
                                 }
