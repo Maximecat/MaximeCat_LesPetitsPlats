@@ -8,11 +8,18 @@ class HomePageController {
     searchValue;
 
     btnIngredients;
+    listeIngredientBlock;
     inputIngredients;
+
     btnAppareils;
+    listeAppareilBlock;
     inputAppareils;
+
     btnUstensiles;
+    listeUstensileBlock;
     inputUstensiles;
+
+    iconChevron;
 
     tagsContainer;
     selectedTags;
@@ -26,11 +33,19 @@ class HomePageController {
         this.searchValue = "";
 
         this.btnIngredients = document.getElementById('btn-ingredients');
+        this.listeIngredientBlock = document.getElementById('liste-ingredient-block');
         this.inputIngredients = document.getElementById('btn-input-ingredient');
+        this.iconCloseIngredients = document.getElementById('icon-close-ingredients');
+
         this.btnAppareils = document.getElementById('btn-appareils');
+        this.listeAppareilBlock = document.getElementById('liste-appareil-block');
         this.inputAppareils = document.getElementById('btn-input-appareil');
+        this.iconCloseAppareils = document.getElementById('icon-close-appareils');
+
         this.btnUstensiles = document.getElementById('btn-ustensiles');
+        this.listeUstensileBlock = document.getElementById('liste-ustensile-block');
         this.inputUstensiles = document.getElementById('btn-input-ustensile');
+        this.iconCloseUstensiles = document.getElementById('icon-close-ustensiles');
 
         this.tagsContainer = document.getElementById('tags-banner');
         this.selectedTags = [];
@@ -44,6 +59,48 @@ class HomePageController {
 
     // Ecoute sur les inputs des boutons et de la barre de recherche
     initEvents() {
+        this.btnIngredients.addEventListener('click', (e) => {
+            this.btnIngredients.style.display = "none";
+            this.listeIngredientBlock.style.display = "block";
+            this.listeAppareilBlock.style.display = "none";
+            this.listeUstensileBlock.style.display = "none";
+            this.btnAppareils.style.display = "block";
+            this.btnUstensiles.style.display = "block";
+        });
+
+        this.btnAppareils.addEventListener('click', (e) => {
+            this.btnAppareils.style.display = "none";
+            this.listeAppareilBlock.style.display = "block";
+            this.listeIngredientBlock.style.display = "none";
+            this.listeUstensileBlock.style.display = "none";
+            this.btnIngredients.style.display = "block";
+            this.btnUstensiles.style.display = "block";
+        });
+
+        this.btnUstensiles.addEventListener('click', (e) => {
+            this.btnUstensiles.style.display = "none";
+            this.listeUstensileBlock.style.display = "block";
+            this.listeIngredientBlock.style.display = "none";
+            this.listeAppareilBlock.style.display = "none";
+            this.btnIngredients.style.display = "block";
+            this.btnAppareils.style.display = "block";
+        });
+
+        this.iconCloseIngredients.addEventListener('click', (e) => {
+            this.listeIngredientBlock.style.display = "none";
+            this.btnIngredients.style.display = "block";
+        });
+
+        this.iconCloseAppareils.addEventListener('click', (e) => {
+            this.listeAppareilBlock.style.display = "none";
+            this.btnAppareils.style.display = "block";
+        });
+
+        this.iconCloseUstensiles.addEventListener('click', (e) => {
+            this.listeUstensileBlock.style.display = "none";
+            this.btnUstensiles.style.display = "block";
+        });
+
         this.inputIngredients.addEventListener('keyup', (e) => {
             const ingredients = this.recipeService.getIngredients(this.recipes, e.target.value, this.selectedTags);
             this.displayListTag('ingredient', ingredients);
