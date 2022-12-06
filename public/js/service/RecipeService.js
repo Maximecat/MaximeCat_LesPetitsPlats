@@ -36,14 +36,14 @@ export class RecipeService {
                 if (searchInput) {
                     // Filtre des recettes
                     datas.recipes = datas.recipes.filter(recipe => {
-                        const checkNameOrDesc = recipe.name.toLowerCase().includes(searchInput.toLowerCase()) || recipe.description.toLowerCase().includes(searchInput.toLowerCase());
+                        const checkNameOrDesc = new RegExp(searchInput.toLowerCase()).test(recipe.name.toLowerCase()) || new RegExp(searchInput.toLowerCase()).test(recipe.description.toLowerCase());
                         // Si la recherche est contenu dans le titre ou la description d'une recette, on l'affiche
                         if (checkNameOrDesc) {
                             return true;
                         } else {
                             const foundIngredient = recipe.ingredients.find(ing => {
-                                return ing.ingredient.toLowerCase().includes(searchInput.toLowerCase());
-                            })
+                                return new RegExp(searchInput.toLowerCase()).test(ing.ingredient.toLowerCase());
+                            });
                             // Si la recherche est contenu dans la liste des ingrédients d'une recette, on l'affiche
                             if (foundIngredient) {
                                 return true;
@@ -51,7 +51,7 @@ export class RecipeService {
                                 return false;
                             }
                         }
-                    })
+                    });
                 }
                 return datas.recipes.map(recipe => new Recipe(recipe))
             })
@@ -74,7 +74,7 @@ export class RecipeService {
         // Si une saisi est formuler dans l'input du bouton, filtre des ingredients dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             ingredients = ingredients.filter(ingredient => {
-                return ingredient.toLowerCase().includes(filterText);
+                return ingredient.toLowerCase().includes(filterText.toLowerCase());
             })
         }
 
@@ -100,7 +100,7 @@ export class RecipeService {
         // Si une saisi est formuler dans l'input du bouton, filtre des appareils dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             appareils = appareils.filter(appareil => {
-                return appareil.toLowerCase().includes(filterText);
+                return appareil.toLowerCase().includes(filterText.toLowerCase());
             })
         }
 
@@ -126,7 +126,7 @@ export class RecipeService {
         // Si une saisi est formuler dans l'input du bouton, filtre des ustensiles dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             ustensiles = ustensiles.filter(ustensile => {
-                return ustensile.toLowerCase().includes(filterText);
+                return ustensile.toLowerCase().includes(filterText.toLowerCase());
             })
         }
 
