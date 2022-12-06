@@ -28,42 +28,52 @@
             <button id="btn-ingredients" class="buttons bg-ingredient">
                 <div class="btn-front">
                     <span class="btn-title">Ingredients</span>
-                    <input id="btn-input-ingredient" type="text" class="bg-ingredient btn-input"
-                        placeholder="Rechercher un ingrédient">
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="btn-second-part" id="liste-ingredient-part">
-                </div>
             </button>
-
+            <div class="btn-second-part bg-ingredient" id="liste-ingredient-block">
+                <div class="card-header">
+                    <input id="btn-input-ingredient" class="btn-input bg-ingredient" type="text"
+                        placeholder="Rechercher un ingrédient">
+                    <i id="icon-close-ingredients" class="fa-solid fa-chevron-up"></i>
+                </div>
+                <div id="liste-ingredient-part"></div>
+            </div>
 
             <button id="btn-appareils" class="buttons bg-appareil">
                 <div class="btn-front">
                     <span class="btn-title">Appareils</span>
-                    <input id="btn-input-appareil" type="text" class="bg-appareil btn-input"
-                        placeholder="Rechercher un appareil">
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="btn-second-part" id="liste-appareil-part">
-                </div>
             </button>
+            <div class="btn-second-part bg-appareil" id="liste-appareil-block">
+                <div class="card-header">
+                    <input id="btn-input-appareil" class="btn-input bg-appareil" type="text"
+                        placeholder="Rechercher un appareil">
+                    <i id="icon-close-appareils" class="fa-solid fa-chevron-up"></i>
+                </div>
+                <div id="liste-appareil-part"></div>
+            </div>
 
             <button id="btn-ustensiles" class="buttons bg-ustensile">
                 <div class="btn-front">
                     <span class="btn-title">Ustensiles</span>
-                    <input id="btn-input-ustensile" type="text" class="bg-ustensile btn-input"
-                        placeholder="Rechercher un ustensile">
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="btn-second-part" id="liste-ustensile-part">
-                </div>
             </button>
+            <div class="btn-second-part bg-ustensile" id="liste-ustensile-block">
+                <div class="card-header">
+                    <input id="btn-input-ustensile" class="btn-input bg-ustensile" type="text"
+                        placeholder="Rechercher un ustensile">
+                    <i id="icon-close-ustensiles" class="fa-solid fa-chevron-up"></i>
+                </div>
+                <div id="liste-ustensile-part"></div>
+            </div>
         </div>
     </header>
 
     <main id="card-container">
     </main>
-
 
     <script src="https://kit.fontawesome.com/b62bead743.js" crossorigin="anonymous" type="module"></script>
     <script src="public/js/controllers/homePage.js" type="module"></script>
