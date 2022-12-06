@@ -75,7 +75,7 @@ export class RecipeService {
         // Si une saisi est formuler dans l'input du bouton, filtre des ingredients dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             ingredients = ingredients.filter(ingredient => {
-                return ingredient.toLowerCase().includes(filterText);
+                return ingredient.toLowerCase().includes(filterText.toLowerCase());
             })
         }
 
@@ -101,7 +101,7 @@ export class RecipeService {
         // Si une saisi est formuler dans l'input du bouton, filtre des appareils dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             appareils = appareils.filter(appareil => {
-                return appareil.toLowerCase().includes(filterText);
+                return appareil.toLowerCase().includes(filterText.toLowerCase());
             })
         }
 
@@ -127,7 +127,7 @@ export class RecipeService {
         // Si une saisi est formuler dans l'input du bouton, filtre des ustensiles dans le tableau et affiche ceux qui contiennent la saisi
         if (filterText) {
             ustensiles = ustensiles.filter(ustensile => {
-                return ustensile.toLowerCase().includes(filterText);
+                return ustensile.toLowerCase().includes(filterText.toLowerCase());
             })
         }
 
