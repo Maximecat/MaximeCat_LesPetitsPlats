@@ -119,7 +119,6 @@ body {
 
 /*        Boutons input's        */
 .btn-input {
-    display: none;
     color: white;
     font-family: 'Open Sans', sans-serif;
     border: none;
@@ -139,29 +138,20 @@ body {
     cursor: pointer;
 }
 
-.buttons:focus .fa-chevron-down {
-    transform: rotate(180deg);
-    padding-top: 15px;
+.fa-chevron-up {
+    color: white;
+    align-self: center;
+    cursor: pointer;
 }
 
-/*       Boutons switch text on click        */
-.buttons:focus .btn-title {
-    display: none;
-}
-
-.buttons:focus .btn-input {
-    display: block;
-}
-
-/*       Boutons 2éme parti        */
+/*       Boutons Listes        */
 .btn-second-part {
     display: none;
     width: 489px;
-    margin-top: 20px;
-}
-
-.buttons:focus .btn-second-part {
-    display: block;
+    margin-top: 15px;
+    margin-right: 20px;
+    padding: 15px;
+    border-radius: 3px;
 }
 
 .btn-liste {
@@ -176,6 +166,9 @@ body {
 }
 
 .btn-liste-element {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -313,18 +306,9 @@ main {
         justify-content: center;
     }
 
-    .buttons:focus {
-        justify-content: space-between;
-        flex-direction: column;
-    }
-
-    .buttons:focus .btn-front {
-        width: 100%;
-    }
-
     .btn-second-part {
-        margin-top: 5px;
-        width: 100%;
+        width: auto;
+        margin-right: 0px;
     }
 
     main {
@@ -353,12 +337,5 @@ main {
 
     .btn-liste {
         grid-template-columns: 1fr;
-    }
-
-    .recipe-description {
-        color: black;
-        font-family: 'Open Sans', sans-serif;
-        margin-left: 0px;
-        margin-bottom: 0px;
     }
 }
