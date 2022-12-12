@@ -16,6 +16,7 @@
         ----------------------------------------------------------------------
 
 - [Utilisation de l'outil de performances **JSBEN.CH**](https://jsben.ch/M9pHs)
+  (Code Block 1 = branch algoB, Code Block 2 = branch main)
 - [Exemple de recherche 1](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Mascarpone.png)
 - [Exemple de recherche 2](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Pâte-brisée.png)
 - [Exemple de recherche 3](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/poisson-cru.png)
