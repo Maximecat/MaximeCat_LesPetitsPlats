@@ -10,8 +10,8 @@
 
        ----------------------------------------------------------------------
 1. [**Fiche d’investigation de fonctionnalité**](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/FicheD'investigationFonctionnalité.png)
-2. [**Logigramme A (main)**](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/branchMainP7.png)
-3. [**Logigramme B (algoB)**](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/branchAlgoB-P7.png)
+2. [**Algorigramme A (main)**](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/branchMainP7.png)
+3. [**Algorigramme B (algoB)**](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/branchAlgoB-P7.png)
 
         ----------------------------------------------------------------------
 
