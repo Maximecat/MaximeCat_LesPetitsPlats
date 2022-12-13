@@ -17,12 +17,12 @@
 
 - [Utilisation de l'outil de performances **JSBEN.CH**](https://jsben.ch/M9pHs)
   (Code Block 1 = branch algoB, Code Block 2 = branch main)
-- [Exemple de recherche 1](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Mascarpone.png)
-- [Exemple de recherche 2](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Pâte-brisée.png)
-- [Exemple de recherche 3](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/poisson-cru.png)
-- [Exemple de recherche 4](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Poisson.png)
-- [Exemple de recherche 5](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/pruneaux.png)
+- [Exemple de recherche 1](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Mascarpone.png) recherche = "Mascarpone",
+- [Exemple de recherche 2](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Pâte-brisée.png) recherche = "Pâte brisée",
+- [Exemple de recherche 3](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/poisson-cru.png) recherche = "poisson cru",
+- [Exemple de recherche 4](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/Poisson.png) recherche = "Poisson",
+- [Exemple de recherche 5](https://github.com/Maximecat/Maximecat_7_04072022/blob/main/public/doc/searchScreen/pruneaux.png) recherche = "pruneaux"
 
         ----------------------------------------------------------------------
 
-- [Validation **W3C** sans erreur](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmaximecat.github.io%2FMaximecat_7_04072022%2F)
+- [Validation **W3C**](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmaximecat.github.io%2FMaximecat_7_04072022%2F)
