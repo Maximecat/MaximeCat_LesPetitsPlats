@@ -40,6 +40,6 @@ Vous utiliserez des outils et méthodes avancées de JavaScript, ainsi qu'un fra
 - [Exemple de recherche 4 : "Poisson"](https://github.com/Maximecat/MaximeCat_LesPetitsPlats/blob/main/public/doc/searchScreen/Poisson.png)
 - [Exemple de recherche 5 : "Pruneaux"](https://github.com/Maximecat/MaximeCat_LesPetitsPlats/blob/main/public/doc/searchScreen/pruneaux.png) 
 
-        ----------------------------------------------------------------------
+## Résultat Validateur W3C
 
 - [Validation **W3C**](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmaximecat.github.io%2FMaximeCat_LesPetitsPlats)
