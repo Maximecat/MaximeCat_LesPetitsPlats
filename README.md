@@ -13,7 +13,8 @@ Avec à disposition :
 - [La description du cas d'utilisation de recherche](https://github.com/Maximecat/MaximeCat_LesPetitsPlats/blob/main/public/doc/FicheCasD'utilisation.pdf)
 - [La maquette de la page sur Figma](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
 
-Vous utiliserez des outils et méthodes avancées de JavaScript, ainsi qu'un framework front-end comme Bootstrap pour l'interface.
+- Vous utiliserez des outils et méthodes avancées de JavaScript, ainsi qu'un framework front-end comme Bootstrap pour l'interface.
+- Uniquement les maquettes version Desktop sont fournies, le site devra être responsive et s'adapter en format tablette et mobile.
 
 ## Languages utilisés
 - HTML
