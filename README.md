@@ -1,4 +1,4 @@
-# ![Logo Les petits plats](/public/assets/images/logo.png)
+# ![Logo Les petits plats](/public/assets/images/LesPetisPlats-resize.png)
 
 ## Objectif(s) 
 Développez un algorithme de recherche en JavaScript pour le site "Les petits plats".
