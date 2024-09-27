@@ -33,7 +33,7 @@ Avec à disposition :
 
 ## Résultat performances
 
-- [**Utilisation de l'outil de performances **"JSBEN.CH"**](https://jsben.ch/M9pHs) 
+- [**Utilisation de l'outil de performances "JSBEN.CH"**](https://jsben.ch/M9pHs) 
   (Code Block 1 = branch algoB, Code Block 2 = branch main)
 - [Exemple de recherche 1 : "Mascarpone"](https://github.com/Maximecat/MaximeCat_LesPetitsPlats/blob/main/public/doc/searchScreen/Mascarpone.png)
 - [Exemple de recherche 2 : "Pâte brisée"](https://github.com/Maximecat/MaximeCat_LesPetitsPlats/blob/main/public/doc/searchScreen/Pâte-brisée.png)
